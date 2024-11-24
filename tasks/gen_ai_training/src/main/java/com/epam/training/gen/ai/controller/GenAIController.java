@@ -4,12 +4,11 @@ import com.epam.training.gen.ai.model.Prompt;
 import com.epam.training.gen.ai.model.PromptResponse;
 import com.epam.training.gen.ai.service.KernelService;
 import com.epam.training.gen.ai.service.PromptService;
+import java.util.List;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.List;
 
 @RestController
 @AllArgsConstructor

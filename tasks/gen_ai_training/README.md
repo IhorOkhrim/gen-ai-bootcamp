@@ -11,6 +11,14 @@
 
 The file [requests.http](./api/requests.http) containing predefined API calls.
 
+### Steps to Verify API Calls
+Start the Application using Maven:
+
+```bash
+export API_KEY=[PUT_YOUR_API_KEY_HERE]
+mvn spring-boot:run
+```
+
 ### References
 
 [Spring Boot Documentation](https://spring.io/projects/spring-boot)

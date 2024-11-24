@@ -22,9 +22,9 @@ public class KernelService {
     public String processWithHistory(String prompt) {
 
         InvocationContext invocationContext = new InvocationContext.Builder()
-                .withReturnMode(InvocationReturnMode.LAST_MESSAGE_ONLY)
-                .withToolCallBehavior(ToolCallBehavior.allowAllKernelFunctions(true))
-                .build();
+                        .withReturnMode(InvocationReturnMode.LAST_MESSAGE_ONLY)
+                        .withToolCallBehavior(ToolCallBehavior.allowAllKernelFunctions(true))
+                        .build();
 
         var response = kernel.invokeAsync(getChat())
                 .withArguments(getKernelFunctionArguments(prompt, chatHistory))
@@ -46,15 +46,15 @@ public class KernelService {
      */
     private KernelFunction<String> getChat() {
         return KernelFunction.<String>createFromPrompt("""
-                        {{$chatHistory}}
-                        <message role="user">{{$request}}</message>""")
+                {{$chatHistory}}
+                <message role="user">{{$request}}</message>""")
                 .build();
     }
 
     /**
      * Creates the kernel function arguments with the user prompt and chat history.
      *
-     * @param prompt the user's input
+     * @param prompt      the user's input
      * @param chatHistory the current chat history
      * @return a {@link KernelFunctionArguments} instance containing the variables for the AI model
      */

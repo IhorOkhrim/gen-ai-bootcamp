@@ -23,13 +23,15 @@ public class SemanticKernelConfiguration {
     /**
      * Creates a {@link ChatCompletionService} bean for handling chat completions using Azure OpenAI.
      *
-     * @param openAIAsyncClient     the {@link OpenAIAsyncClient} to communicate with Azure OpenAI
+     * @param openAIAsyncClient the {@link OpenAIAsyncClient} to communicate with Azure OpenAI
      * @return an instance of {@link ChatCompletionService}
      */
     @Bean
     public ChatCompletionService chatCompletionService(OpenAIAsyncClient openAIAsyncClient) {
-        return OpenAIChatCompletion.builder().withModelId(clientAazureopenaiProperties.getDeploymentOrModelName())
-                .withOpenAIAsyncClient(openAIAsyncClient).build();
+        return OpenAIChatCompletion.builder()
+                .withModelId(clientAazureopenaiProperties.getDeploymentOrModelName())
+                .withOpenAIAsyncClient(openAIAsyncClient)
+                .build();
     }
 
     /**
@@ -51,8 +53,10 @@ public class SemanticKernelConfiguration {
      */
     @Bean
     public Kernel kernel(ChatCompletionService chatCompletionService, KernelPlugin kernelPlugin) {
-        return Kernel.builder().withAIService(ChatCompletionService.class, chatCompletionService)
-                .withPlugin(kernelPlugin).build();
+        return Kernel.builder()
+                .withAIService(ChatCompletionService.class, chatCompletionService)
+                .withPlugin(kernelPlugin)
+                .build();
     }
 
     @Bean
