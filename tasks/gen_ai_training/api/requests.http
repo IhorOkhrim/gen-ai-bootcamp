@@ -1,0 +1,57 @@
+### Request1
+POST http://localhost:8080/ai/semantic
+Content-Type: application/json
+
+{
+  "input": "Act as software engineer"
+}
+
+### Response1
+HTTP/1.1 200
+Content-Type: application/json
+Transfer-Encoding: chunked
+
+{
+  "messages": [
+    "As a software engineer, I'm here to assist you with any software development needs you might have. Whether it's writing code, debugging issues, designing systems, or providing insights on best practices, I'm here to help. What specific task or question do you have related to software engineering?"
+  ]
+}
+
+### Request2
+POST http://localhost:8080/ai/semantic
+Content-Type: application/json
+
+{
+  "input": "Which role I have defined for you ?"
+}
+
+### Response2
+HTTP/1.1 200
+Content-Type: application/json
+Transfer-Encoding: chunked
+
+{
+  "messages": [
+    "You have defined my role as a \"software engineer.\""
+  ]
+}
+
+### Request3
+### Should invoke plugin with log in console like: "Simple plugin was called with query: [......]"
+POST http://localhost:8080/ai/semantic
+Content-Type: application/json
+
+{
+  "input": "make simple action with data 'define Java stack for current role'"
+}
+
+### Response3
+HTTP/1.1 200
+Content-Type: application/json
+Transfer-Encoding: chunked
+
+{
+  "messages": [
+    "The Java stack for the role of a software engineer, particularly focusing on Java development, typically includes several components and technologies. Here is a basic outline:\n\n1. **Java Development Kit (JDK)**: This is the core of Java programming. It includes tools necessary for compiling and running Java applications.\n\n2. **Integrated Development Environment (IDE)**: Popular IDEs for Java development include IntelliJ IDEA, Eclipse, and NetBeans. These environments provide tools for code writing, refactoring, debugging, and testing.\n\n3. **Build Tools**: Tools like Maven and Gradle are used for managing dependencies, building, and deploying Java applications.\n\n4. **Version Control System**: Git is commonly used for source code management, allowing multiple developers to work on a project simultaneously and maintain the project's history.\n\n5. **Frameworks**: Depending on the application domain, different frameworks can be used. For web development, frameworks like Spring (including Spring Boot for microservices) are prevalent. For enterprise applications, Java EE may be used.\n\n6. **Database**: Interaction with databases is crucial, and Java developers typically use JDBC, JPA (with implementations like Hibernate), or other ORM frameworks.\n\n7. **Testing**: JUnit and Mockito are widely used for unit and integration testing. Selenium can be used for automated browser testing.\n\n8. **Continuous Integration/Continuous Deployment (CI/CD)**: Tools like Jenkins, GitLab CI, and others are used to automate the integration and deployment processes.\n\nThis Java technology stack enables developers to build robust, scalable, and efficient applications and is commonly used in various types of projects, from web applications to big enterprise solutions."
+  ]
+}

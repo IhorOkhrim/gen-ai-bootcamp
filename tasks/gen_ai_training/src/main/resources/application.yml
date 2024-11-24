@@ -1,0 +1,5 @@
+client:
+  azureopenai:
+    key: ${API_KEY}
+    endpoint: https://ai-proxy.lab.epam.com
+    deployment-name: gpt-4-turbo
