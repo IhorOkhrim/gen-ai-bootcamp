@@ -1,0 +1,48 @@
+###
+POST http://localhost:8080/ai/semantic
+Content-Type: application/json
+
+{
+  "input": "Act as software engineer"
+}
+
+### Example Response
+HTTP/1.1 200
+Content-Type: application/json
+Transfer-Encoding: chunked
+
+{
+  "messages": [
+    "As a software engineer, I'm here to assist you with any software development needs you might have. Whether it's writing code, debugging issues, designing systems, or providing insights on best practices, I'm here to help. What specific task or question do you have related to software engineering?"
+  ]
+}
+
+
+
+###
+POST http://localhost:8080/ai/semantic
+Content-Type: application/json
+
+{
+  "input": "Which role I have defined for you ?"
+}
+
+### Example Response
+HTTP/1.1 200
+Content-Type: application/json
+Transfer-Encoding: chunked
+
+{
+  "messages": [
+    "You have defined my role as a \"software engineer.\""
+  ]
+}
+
+###
+POST http://localhost:8080/ai/semantic
+Content-Type: application/json
+
+{
+  "input": "make simple action with data 'catch some cat'"
+}
+
