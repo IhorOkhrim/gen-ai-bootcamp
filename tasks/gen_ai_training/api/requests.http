@@ -1,4 +1,4 @@
-### Request1
+### Module1 Request1.1
 POST http://localhost:8080/ai/semantic
 Content-Type: application/json
 
@@ -6,7 +6,7 @@ Content-Type: application/json
   "input": "Act as software engineer"
 }
 
-### Response1
+### Response1.1
 HTTP/1.1 200
 Content-Type: application/json
 Transfer-Encoding: chunked
@@ -17,7 +17,7 @@ Transfer-Encoding: chunked
   ]
 }
 
-### Request2
+### Request1.2
 POST http://localhost:8080/ai/semantic
 Content-Type: application/json
 
@@ -25,7 +25,7 @@ Content-Type: application/json
   "input": "Which role I have defined for you ?"
 }
 
-### Response2
+### Response1.2
 HTTP/1.1 200
 Content-Type: application/json
 Transfer-Encoding: chunked
@@ -36,7 +36,7 @@ Transfer-Encoding: chunked
   ]
 }
 
-### Request3
+### Request1.3
 ### Should invoke plugin with log in console like: "Simple plugin was called with query: [......]"
 POST http://localhost:8080/ai/semantic
 Content-Type: application/json
@@ -45,7 +45,7 @@ Content-Type: application/json
   "input": "make simple action with data 'define Java stack for current role'"
 }
 
-### Response3
+### Response1.3
 HTTP/1.1 200
 Content-Type: application/json
 Transfer-Encoding: chunked
@@ -54,4 +54,121 @@ Transfer-Encoding: chunked
   "messages": [
     "The Java stack for the role of a software engineer, particularly focusing on Java development, typically includes several components and technologies. Here is a basic outline:\n\n1. **Java Development Kit (JDK)**: This is the core of Java programming. It includes tools necessary for compiling and running Java applications.\n\n2. **Integrated Development Environment (IDE)**: Popular IDEs for Java development include IntelliJ IDEA, Eclipse, and NetBeans. These environments provide tools for code writing, refactoring, debugging, and testing.\n\n3. **Build Tools**: Tools like Maven and Gradle are used for managing dependencies, building, and deploying Java applications.\n\n4. **Version Control System**: Git is commonly used for source code management, allowing multiple developers to work on a project simultaneously and maintain the project's history.\n\n5. **Frameworks**: Depending on the application domain, different frameworks can be used. For web development, frameworks like Spring (including Spring Boot for microservices) are prevalent. For enterprise applications, Java EE may be used.\n\n6. **Database**: Interaction with databases is crucial, and Java developers typically use JDBC, JPA (with implementations like Hibernate), or other ORM frameworks.\n\n7. **Testing**: JUnit and Mockito are widely used for unit and integration testing. Selenium can be used for automated browser testing.\n\n8. **Continuous Integration/Continuous Deployment (CI/CD)**: Tools like Jenkins, GitLab CI, and others are used to automate the integration and deployment processes.\n\nThis Java technology stack enables developers to build robust, scalable, and efficient applications and is commonly used in various types of projects, from web applications to big enterprise solutions."
   ]
+}
+
+### Module2 Request2.1 Temperature default 1.0
+POST http://localhost:8080/ai/semantic
+Content-Type: application/json
+
+{
+    "input": "Act as a poet"
+}
+
+### Response2.1
+HTTP/1.1 200
+Content-Type: application/json
+Transfer-Encoding: chunked
+
+{
+    "messages": [
+        "As shadows cast by candle flame at night,\nI weave the tapestries of dreams and thought.\nA poet's heart, a scribe of deep insight,\nWhere words become the art that's gently wrought.\n\nIn every line, a subtle truth I seek,\nOn whispered breeze, through leaves of old oak trees.\nEach stanza holds a power, strong yet meek,\nTo stir the soul, to bring us to our knees.\n\nA verse can cry the tears of deepest woe,\nOr sing the joys that dance on morning light.\nWith every rhythm, letting heartbeats flow,\nI capture life, in hues of black and white.\n\nSo, let us journey through this inky maze,\nWhere poets dwell, in silent, starlit grace."
+    ]
+}
+
+### Request2.2
+POST http://localhost:8080/ai/semantic
+Content-Type: application/json
+
+{
+    "input": "Write a short poem in 4 sentences"
+}
+
+### Response2.2
+HTTP/1.1 200
+Content-Type: application/json
+Transfer-Encoding: chunked
+
+{
+    "messages": [
+        "In the quiet blue of a crisp dawn sky,\nWhispers of morning stir the sleepy land.\nSun-kissed petals unfold, shyly sigh,\nAs day awakens with a gentle hand."
+    ]
+}
+
+### Request2.3
+POST http://localhost:8080/ai/semantic
+Content-Type: application/json
+
+{
+    "input": "Show our chat history"
+}
+
+### Response2.3
+HTTP/1.1 200
+Content-Type: application/json
+Transfer-Encoding: chunked
+
+{
+    "messages": [
+        "Here's the summary of our chat history:\n\n1. You asked me to act as a poet.\n2. I responded with a poetic paragraph.\n3. You requested a short poem in 4 sentences, which I provided.\n4. You asked to see our chat history.\n\nIf you need more details or further assistance, feel free to ask!"
+    ]
+}
+
+### Request2.4 Temperature 2.0
+HTTP/1.1 200
+Content-Type: application/json
+Transfer-Encoding: chunked
+
+{
+    "input": "Act as a poet"
+}
+
+### Response2.4
+HTTP/1.1 200
+Content-Type: application/json
+Transfer-Encoding: chunked
+
+{
+    "messages": [
+        "Of course! I'd be happy to express in verse. What theme or subject would you like the poem to be about?"
+    ]
+}
+
+### Request2.5
+HTTP/1.1 200
+Content-Type: application/json
+Transfer-Encoding: chunked
+
+{
+    "input": "Write a short poem in 4 sentences"
+}
+
+### Response2.5
+HTTP/1.1 200
+Content-Type: application/json
+Transfer-Encoding: chunked
+
+{
+    "messages": [
+        "Certainly! Here's a short poem:\n\nIn the quiet whisper of the dawn,\nThe sky paints shades of a hopeful morn.\nEach breath a promise, softly sworn,\nTo cherish moments, newly born."
+    ]
+}
+
+### Request2.6
+HTTP/1.1 200
+Content-Type: application/json
+Transfer-Encoding: chunked
+
+{
+    "input": "Show our chat history"
+}
+
+### Response2.6
+HTTP/1.1 200
+Content-Type: application/json
+Transfer-Encoding: chunked
+
+{
+    "messages": [
+        "Here's a summary of our chat history:\n\n1. **You asked:** Act as a poet\n2. **I responded:** Of course! I'd be happy to express in verse. What theme or subject would you like the poem to be about?\n\n3. **You requested:** Write a short poem in 4 sentences\n4. **I provided:** A short poem:\n   *In the quiet whisper of the dawn,*\n   *The sky paints shades of a hopeful morn.*\n   *Each breath a promise, softly sworn,*\n   *To cherish moments, newly born.* \n\n5. **You asked:** Show our chat history\n6. **I provided:** A summary of our chat history (this current response).\n\nFeel free to ask anything else or give further instructions!"
+    ]
 }

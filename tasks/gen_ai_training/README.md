@@ -1,4 +1,4 @@
-## Module 1 Results
+## Module 1-2 Results
 
 ### Prerequisites
 
