@@ -3,7 +3,7 @@ package com.epam.training.gen.ai.service;
 import com.azure.ai.openai.OpenAIAsyncClient;
 import com.azure.ai.openai.models.ChatCompletionsOptions;
 import com.azure.ai.openai.models.ChatRequestUserMessage;
-import com.epam.training.gen.ai.config.ClientAazureOpenAiProperties;
+import com.epam.training.gen.ai.config.ClientAzureOpenAiProperties;
 import com.epam.training.gen.ai.model.Prompt;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -17,7 +17,7 @@ import java.util.List;
 public class PromptService {
 
     private final OpenAIAsyncClient aiAsyncClient;
-    private final ClientAazureOpenAiProperties clientAazureOpenAiProperties;
+    private final ClientAzureOpenAiProperties clientAazureOpenAiProperties;
 
     public List<String> getChatCompletions(Prompt prompt) {
         var completions = aiAsyncClient
