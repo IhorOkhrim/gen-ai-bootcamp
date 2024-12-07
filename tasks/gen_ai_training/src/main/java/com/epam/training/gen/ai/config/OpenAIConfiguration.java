@@ -17,7 +17,7 @@ import org.springframework.context.annotation.Configuration;
 @AllArgsConstructor
 public class OpenAIConfiguration {
 
-    private final ClientAazureOpenAiProperties clientAazureOpenAiProperties;
+    private final ClientAzureOpenAiProperties clientAazureOpenAiProperties;
 
     /**
      * Creates an {@link OpenAIAsyncClient} bean for interacting with Azure OpenAI Service asynchronously.
