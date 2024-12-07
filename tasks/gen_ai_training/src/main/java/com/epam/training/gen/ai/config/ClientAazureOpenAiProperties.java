@@ -16,4 +16,7 @@ public class ClientAazureOpenAiProperties {
 
     @Value("${client.azureopenai.deployment-name}")
     private String deploymentOrModelName;
+
+     @Value("${client.azureopenai.temperature}")
+     private Double temperature;
 }

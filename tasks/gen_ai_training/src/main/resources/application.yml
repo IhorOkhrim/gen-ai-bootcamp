@@ -3,3 +3,4 @@ client:
     key: ${API_KEY}
     endpoint: https://ai-proxy.lab.epam.com
     deployment-name: gpt-4-turbo
+    temperature: 1.0

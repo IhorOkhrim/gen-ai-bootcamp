@@ -2,8 +2,7 @@ package com.epam.training.gen.ai.service;
 
 import com.microsoft.semantickernel.Kernel;
 import com.microsoft.semantickernel.orchestration.InvocationContext;
-import com.microsoft.semantickernel.orchestration.InvocationReturnMode;
-import com.microsoft.semantickernel.orchestration.ToolCallBehavior;
+import com.microsoft.semantickernel.orchestration.PromptExecutionSettings;
 import com.microsoft.semantickernel.semanticfunctions.KernelFunction;
 import com.microsoft.semantickernel.semanticfunctions.KernelFunctionArguments;
 import com.microsoft.semantickernel.services.chatcompletion.ChatHistory;
@@ -18,16 +17,14 @@ public class KernelService {
 
     private final Kernel kernel;
     private final ChatHistory chatHistory;
+    private final InvocationContext invocationContext;
+    private final PromptExecutionSettings promptExecutionSettings;
 
     public String processWithHistory(String prompt) {
 
-        InvocationContext invocationContext = new InvocationContext.Builder()
-                        .withReturnMode(InvocationReturnMode.LAST_MESSAGE_ONLY)
-                        .withToolCallBehavior(ToolCallBehavior.allowAllKernelFunctions(true))
-                        .build();
-
         var response = kernel.invokeAsync(getChat())
                 .withArguments(getKernelFunctionArguments(prompt, chatHistory))
+                .withPromptExecutionSettings(promptExecutionSettings)
                 .withInvocationContext(invocationContext)
                 .block();
 
