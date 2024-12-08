@@ -172,3 +172,48 @@ Transfer-Encoding: chunked
         "Here's a summary of our chat history:\n\n1. **You asked:** Act as a poet\n2. **I responded:** Of course! I'd be happy to express in verse. What theme or subject would you like the poem to be about?\n\n3. **You requested:** Write a short poem in 4 sentences\n4. **I provided:** A short poem:\n   *In the quiet whisper of the dawn,*\n   *The sky paints shades of a hopeful morn.*\n   *Each breath a promise, softly sworn,*\n   *To cherish moments, newly born.* \n\n5. **You asked:** Show our chat history\n6. **I provided:** A summary of our chat history (this current response).\n\nFeel free to ask anything else or give further instructions!"
     ]
 }
+
+
+### Module3 Request3.1
+POST http://localhost:8080/ai/semantic
+Content-Type: application/json
+
+{
+    "input": "What means life",
+    "temperature": 0.1,
+    "modelName": "gpt-4o",
+    "functionsEnabled": false
+}
+
+### Response3.1
+HTTP/1.1 200
+Content-Type: application/json
+Transfer-Encoding: chunked
+
+{
+  "messages": [
+    "The question \"What is the meaning of life?\" is a profound one that has been contemplated by philosophers, theologians, scientists, and many others throughout history. There is no single answer, as it often depends on individual beliefs, values, and cultural perspectives. Here are a few different viewpoints:\n\n1. **Philosophical**: Philosophers like Aristotle and Nietzsche have offered diverse perspectives, ranging from achieving personal happiness and fulfillment to embracing existential freedom and creating one's own meaning.\n\n2. **Religious/Spiritual**: Many religious traditions suggest that life’s meaning is found in serving a higher power, following spiritual teachings, or achieving a specific state of being, such as enlightenment or salvation.\n\n3. **Scientific**: From a biological standpoint, the purpose of life can be viewed as survival and reproduction. Evolutionary biology suggests that organisms are driven to pass on their genes to the next generation.\n\n4. **Humanistic**: This perspective emphasizes human experiences and relationships. It suggests that meaning is found through love, connection, creativity, and contributing to the well-being of others.\n\n5. **Personal**: For many people, the meaning of life is subjective and can include personal goals, aspirations, passions, and the quest for knowledge or adventure.\n\nUltimately, the meaning of life is a deeply personal question, and what it means can vary significantly from person to person."
+  ]
+}
+
+### Request3.2
+POST http://localhost:8080/ai/semantic
+Content-Type: application/json
+
+{
+    "input": "What means life",
+    "temperature": 2.1,
+    "modelName": "gpt-4o",
+    "functionsEnabled": false
+}
+
+### Response3.1
+HTTP/1.1 200
+Content-Type: application/json
+Transfer-Encoding: chunked
+
+{
+  "messages": [
+    "Your question touches on a fundamental and deeply personal topic. The meaning of life is a concept that varies greatly among individuals and cultures. Here are a few ways people tend to interpret it:\n\n1. **Personal Fulfillment**: For some, life is about seeking personal happiness, growth, and fulfillment through experiences, relationships, and achievements.\n\n2. **Connection and Relationships**: Many find meaning in forming connections with others, building families, friendships, and communities.\n\n3. **Purpose and Contribution**: Contributing to something larger than oneself, whether it's through work, art, charity, or other forms of service, often gives life meaning.\n\n4. **Spiritual or Religious Beliefs**: Various religions offer their own interpretations, with some viewing life as a journey towards spiritual enlightenment, adhering to divine commands, or preparing for an afterlife.\n\n5. **Existential Views**: Some philosophies, like existentialism, suggest that life doesn’t have an inherent meaning, but individuals are free to create their own sense of purpose through choices and actions.\n\nUltimately, the meaning of life is a deeply individual question, and what resonates as meaningful can differ greatly from one person to another."
+  ]
+}
