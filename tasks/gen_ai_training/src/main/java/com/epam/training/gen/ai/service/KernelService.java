@@ -10,13 +10,16 @@ import com.microsoft.semantickernel.orchestration.ToolCallBehavior;
 import com.microsoft.semantickernel.semanticfunctions.KernelFunction;
 import com.microsoft.semantickernel.semanticfunctions.KernelFunctionArguments;
 import com.microsoft.semantickernel.services.chatcompletion.ChatHistory;
+import jakarta.validation.Valid;
 import java.util.Objects;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.annotation.Validated;
 
 @Service
 @Slf4j
+@Validated
 @RequiredArgsConstructor
 public class KernelService {
 
@@ -29,7 +32,7 @@ public class KernelService {
     private final ClientAzureOpenAiProperties clientAazureopenaiProperties;
 
 
-    public String processWithHistory(Prompt prompt) {
+    public String processWithHistory(@Valid Prompt prompt) {
         var response = kernelBuilder
                 .withModel(prompt.getModelName())
                 .build()

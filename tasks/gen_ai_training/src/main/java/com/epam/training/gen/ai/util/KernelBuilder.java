@@ -1,6 +1,7 @@
 package com.epam.training.gen.ai.util;
 
 import com.azure.ai.openai.OpenAIAsyncClient;
+import com.epam.training.gen.ai.config.ClientAzureOpenAiProperties;
 import com.epam.training.gen.ai.plugin.SimplePlugin;
 import com.microsoft.semantickernel.Kernel;
 import com.microsoft.semantickernel.aiservices.openai.chatcompletion.OpenAIChatCompletion;
@@ -8,7 +9,6 @@ import com.microsoft.semantickernel.plugin.KernelPlugin;
 import com.microsoft.semantickernel.plugin.KernelPluginFactory;
 import com.microsoft.semantickernel.services.chatcompletion.ChatCompletionService;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Scope;
 import org.springframework.context.annotation.ScopedProxyMode;
 import org.springframework.stereotype.Component;
@@ -21,13 +21,12 @@ public class KernelBuilder {
     public static final String PLUGIN_NAME = "SimplePlugin";
 
     private final OpenAIAsyncClient openAIAsyncClient;
+    private final ClientAzureOpenAiProperties clientAzureOpenAiProperties;
 
-    @Value("${client-azureopenai-deployment-name}")
-    private String defaultModel;
     private Kernel kernel;
 
     public KernelBuilder withModel(String modelName) {
-        kernel = createKernel(createChatCompletionService(modelName == null ? defaultModel : modelName));
+        kernel = createKernel(createChatCompletionService(modelName == null ? clientAzureOpenAiProperties.getDeploymentOrModelName() : modelName));
         return this;
     }
 
