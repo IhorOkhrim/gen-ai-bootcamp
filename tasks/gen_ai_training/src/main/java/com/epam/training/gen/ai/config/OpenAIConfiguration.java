@@ -6,6 +6,7 @@ import com.azure.core.credential.AzureKeyCredential;
 import lombok.AllArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.web.client.RestTemplate;
 
 /**
  * Configuration class for setting up the Azure OpenAI Async Client.
@@ -17,7 +18,7 @@ import org.springframework.context.annotation.Configuration;
 @AllArgsConstructor
 public class OpenAIConfiguration {
 
-    private final ClientAzureOpenAiProperties clientAazureOpenAiProperties;
+    private final ClientAzureOpenAiProperties clientAzureOpenAiProperties;
 
     /**
      * Creates an {@link OpenAIAsyncClient} bean for interacting with Azure OpenAI Service asynchronously.
@@ -27,8 +28,13 @@ public class OpenAIConfiguration {
     @Bean
     public OpenAIAsyncClient openAIAsyncClient() {
         return new OpenAIClientBuilder()
-                .credential(new AzureKeyCredential(clientAazureOpenAiProperties.getOpenAiKey()))
-                .endpoint(clientAazureOpenAiProperties.getOpenAiEndpoint())
+                .credential(new AzureKeyCredential(clientAzureOpenAiProperties.getOpenAiKey()))
+                .endpoint(clientAzureOpenAiProperties.getOpenAiEndpoint())
                 .buildAsyncClient();
+    }
+
+    @Bean
+    public RestTemplate restTemplate() {
+        return new RestTemplate();
     }
 }

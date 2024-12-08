@@ -5,11 +5,10 @@ import com.azure.ai.openai.models.ChatCompletionsOptions;
 import com.azure.ai.openai.models.ChatRequestUserMessage;
 import com.epam.training.gen.ai.config.ClientAzureOpenAiProperties;
 import com.epam.training.gen.ai.model.Prompt;
+import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Slf4j
 @Service
@@ -17,20 +16,20 @@ import java.util.List;
 public class PromptService {
 
     private final OpenAIAsyncClient aiAsyncClient;
-    private final ClientAzureOpenAiProperties clientAazureOpenAiProperties;
+    private final ClientAzureOpenAiProperties clientAzureOpenAiProperties;
 
     public List<String> getChatCompletions(Prompt prompt) {
-        var completions = aiAsyncClient
-                .getChatCompletions(
-                        clientAazureOpenAiProperties.getDeploymentOrModelName(),
-                        new ChatCompletionsOptions(
-                                List.of(new ChatRequestUserMessage(prompt.getInput()))))
-                .block();
-        var messages = completions.getChoices().stream()
-                .map(c -> c.getMessage().getContent())
-                .toList();
-        log.info(messages.toString());
-        return messages;
-    }
+        var chatOptions = new ChatCompletionsOptions(List.of(new ChatRequestUserMessage(prompt.getInput())));
 
+        return aiAsyncClient.getChatCompletions(clientAzureOpenAiProperties.getDeploymentOrModelName(), chatOptions)
+                .map(completions -> {
+                    var messages = completions.getChoices()
+                            .stream()
+                            .map(c -> c.getMessage().getContent())
+                            .toList();
+                    log.info("Retrieved chat completions: {}", messages);
+                    return messages;
+                })
+                .block();
+    }
 }
