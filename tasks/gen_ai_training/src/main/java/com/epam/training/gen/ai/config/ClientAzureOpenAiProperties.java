@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Getter
-public class ClientAazureOpenAiProperties {
+public class ClientAzureOpenAiProperties {
 
     @Value("${client.azureopenai.key}")
     private String openAiKey;
