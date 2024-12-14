@@ -217,3 +217,37 @@ Transfer-Encoding: chunked
     "Your question touches on a fundamental and deeply personal topic. The meaning of life is a concept that varies greatly among individuals and cultures. Here are a few ways people tend to interpret it:\n\n1. **Personal Fulfillment**: For some, life is about seeking personal happiness, growth, and fulfillment through experiences, relationships, and achievements.\n\n2. **Connection and Relationships**: Many find meaning in forming connections with others, building families, friendships, and communities.\n\n3. **Purpose and Contribution**: Contributing to something larger than oneself, whether it's through work, art, charity, or other forms of service, often gives life meaning.\n\n4. **Spiritual or Religious Beliefs**: Various religions offer their own interpretations, with some viewing life as a journey towards spiritual enlightenment, adhering to divine commands, or preparing for an afterlife.\n\n5. **Existential Views**: Some philosophies, like existentialism, suggest that life doesn’t have an inherent meaning, but individuals are free to create their own sense of purpose through choices and actions.\n\nUltimately, the meaning of life is a deeply individual question, and what resonates as meaningful can differ greatly from one person to another."
   ]
 }
+
+###Module4 Request4.1
+POST http://localhost:8080/ai/semantic
+Content-Type: application/json
+
+{
+    "input": "Calculate me electrical cable, both cooper and aluminium, 2m, 2kW, 220V, 0.85 power factor, allow drop voltage less 3.0",
+    "temperature": 0.2,
+    "modelName": "gpt-4o",
+    "functionsEnabled": true
+}
+
+
+###Request4.2
+POST http://localhost:8080/ai/semantic
+Content-Type: application/json
+
+{
+    "input": "Calculate me AWG aluminium cable, 100m, 2kW, 220V, 0.85 power factor, allow drop voltage less 3.0",
+    "temperature": 0.2,
+    "modelName": "gpt-4o",
+    "functionsEnabled": true
+}
+
+###Request4.3
+POST http://localhost:8080/ai/semantic
+Content-Type: application/json
+
+{
+    "input": "Calculate me cooper cable in mm, 100m, 2kW, 220V, 0.85 power factor, allow drop voltage less 3.0",
+    "temperature": 0.2,
+    "modelName": "gpt-4o",
+    "functionsEnabled": true
+}
