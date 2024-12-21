@@ -2,7 +2,7 @@ package com.epam.training.gen.ai.util;
 
 import com.azure.ai.openai.OpenAIAsyncClient;
 import com.epam.training.gen.ai.config.ClientAzureOpenAiProperties;
-import com.epam.training.gen.ai.plugin.SimplePlugin;
+import com.epam.training.gen.ai.plugin.PowerCableCalculatorPlugin;
 import com.microsoft.semantickernel.Kernel;
 import com.microsoft.semantickernel.aiservices.openai.chatcompletion.OpenAIChatCompletion;
 import com.microsoft.semantickernel.plugin.KernelPlugin;
@@ -18,7 +18,7 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 public class KernelBuilder {
 
-    public static final String PLUGIN_NAME = "SimplePlugin";
+    public static final String POWER_CABLE_CALCULATOR_PLUGIN = "PowerCableCalculatorPlugin";
 
     private final OpenAIAsyncClient openAIAsyncClient;
     private final ClientAzureOpenAiProperties clientAzureOpenAiProperties;
@@ -48,13 +48,13 @@ public class KernelBuilder {
     }
 
     /**
-     * Creates a {@link KernelPlugin} bean using a simple plugin.
+     * Creates a {@link PowerCableCalculatorPlugin} bean using a Power Cable Calculator Plugin.
      *
      * @return an instance of {@link KernelPlugin}
      */
-    private KernelPlugin createKernelPlugin() {
+    private KernelPlugin createPowerCableCalculatorPlugin() {
         return KernelPluginFactory.createFromObject(
-                new SimplePlugin(), PLUGIN_NAME);
+                new PowerCableCalculatorPlugin(), POWER_CABLE_CALCULATOR_PLUGIN);
     }
 
     /**
@@ -66,7 +66,7 @@ public class KernelBuilder {
     private Kernel createKernel(ChatCompletionService chatCompletionService) {
         return Kernel.builder()
                 .withAIService(ChatCompletionService.class, chatCompletionService)
-                .withPlugin(createKernelPlugin())
+                .withPlugin(createPowerCableCalculatorPlugin())
                 .build();
     }
 
