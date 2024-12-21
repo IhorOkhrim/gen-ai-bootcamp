@@ -24,3 +24,5 @@ mvn spring-boot:run
 [Spring Boot Documentation](https://spring.io/projects/spring-boot)
 
 [HTTP Client Plugin for IntelliJ IDEA](https://www.jetbrains.com/help/idea/http-client-in-product-code-editor.html)
+
+//TODO Empty PR - promise: to complete it till the end of 22/12/24
