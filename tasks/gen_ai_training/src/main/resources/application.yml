@@ -4,3 +4,12 @@ client:
     endpoint: https://ai-proxy.lab.epam.com
     deployment-name: gpt-4-turbo
     temperature: 1.0
+  qdrant:
+    host: localhost
+    port: 6334
+    transportSecurity: false
+    init:
+      collection:
+        size: 1536
+        distance: Dot
+        name: embedding_collection

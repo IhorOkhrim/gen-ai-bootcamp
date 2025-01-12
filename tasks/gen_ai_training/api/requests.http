@@ -251,3 +251,493 @@ Content-Type: application/json
     "modelName": "gpt-4o",
     "functionsEnabled": true
 }
+
+###Module5 Request5.1 Create collection
+POST http://localhost:8080/embedding/collection/embedding_collection
+Content-Type: application/x-www-form-urlencoded
+
+
+###Request5.2 Insert embedings
+POST http://localhost:8080/embeddings
+Content-Type: application/json
+
+[
+  {
+    "text": "Python is a versatile programming language known for its simplicity and readability."
+  },
+  {
+    "text": "JavaScript is essential for building dynamic and interactive web applications."
+  },
+  {
+    "text": "C++ is widely used in systems programming due to its high performance and control over hardware."
+  },
+  {
+    "text": "Java is a popular choice for developing platform-independent applications using the JVM."
+  },
+  {
+    "text": "Rust is celebrated for its focus on safety, concurrency, and performance in systems programming."
+  },
+  {
+    "text": "TypeScript enhances JavaScript by adding static typing, improving code maintainability."
+  },
+  {
+    "text": "Ruby, with its elegant syntax, is often associated with web development frameworks like Ruby on Rails."
+  },
+  {
+    "text": "Go, developed by Google, is optimized for simplicity, performance, and concurrency."
+  },
+  {
+    "text": "Kotlin is the preferred language for Android app development, offering modern features."
+  },
+  {
+    "text": "Swift is Apple's programming language for building applications on iOS and macOS platforms."
+  },
+  {
+    "text": "PHP powers a significant portion of the web, including platforms like WordPress."
+  },
+  {
+    "text": "C is one of the oldest programming languages, forming the basis for many modern languages."
+  },
+  {
+    "text": "Perl was once widely used for scripting, text processing, and web development."
+  },
+  {
+    "text": "Scala integrates functional programming with object-oriented programming on the JVM."
+  },
+  {
+    "text": "R is specifically designed for statistical computing and data visualization."
+  },
+  {
+    "text": "Julia is a high-performance programming language for technical and scientific computing."
+  },
+  {
+    "text": "Dart, developed by Google, is used to build cross-platform mobile apps with Flutter."
+  },
+  {
+    "text": "MATLAB is widely used in academia and engineering for numerical computing and modeling."
+  },
+  {
+    "text": "SQL is a domain-specific language designed for managing relational databases."
+  },
+  {
+    "text": "Bash is a shell scripting language commonly used for automating system tasks."
+  },
+  {
+    "text": "Haskell is a functional programming language known for its strong type system."
+  },
+  {
+    "text": "Lua is a lightweight scripting language often embedded in games and applications."
+  },
+  {
+    "text": "Elixir is built on Erlang and excels at building scalable and maintainable applications."
+  },
+  {
+    "text": "Clojure is a modern Lisp dialect emphasizing immutability and functional programming."
+  },
+  {
+    "text": "Assembly language provides low-level control over hardware but is challenging to write."
+  },
+  {
+    "text": "Fortran remains popular in scientific computing for its numerical precision and performance."
+  },
+  {
+    "text": "COBOL is still in use for maintaining legacy business and financial systems."
+  },
+  {
+    "text": "F# is a functional-first language on the .NET platform, ideal for data processing."
+  },
+  {
+    "text": "VB.NET is a language from Microsoft designed for building Windows applications."
+  },
+  {
+    "text": "Objective-C was the primary language for macOS and iOS development before Swift."
+  },
+  {
+    "text": "Prolog is a logic programming language used in artificial intelligence and expert systems."
+  },
+  {
+    "text": "Ada is a structured, statically typed language used in mission-critical applications."
+  },
+  {
+    "text": "Erlang is renowned for its fault-tolerant systems and distributed computing capabilities."
+  },
+  {
+    "text": "Delphi, based on Object Pascal, is a rapid application development environment."
+  },
+  {
+    "text": "Shell scripting is essential for automating repetitive tasks in Unix-like systems."
+  },
+  {
+    "text": "Scratch is a visual programming language aimed at teaching coding to beginners."
+  },
+  {
+    "text": "PowerShell is a task automation language used for managing Windows environments."
+  },
+  {
+    "text": "Groovy is a JVM-based language that enhances productivity with its concise syntax."
+  },
+  {
+    "text": "ColdFusion is a scripting language designed for rapid web application development."
+  },
+  {
+    "text": "AWK is a programming language for text processing and data extraction in files."
+  },
+  {
+    "text": "PostScript is used for describing the layout of documents and rendering graphics."
+  },
+  {
+    "text": "VHDL is a hardware description language for modeling electronic systems."
+  },
+  {
+    "text": "Verilog is widely used for designing and simulating digital circuits."
+  },
+  {
+    "text": "Scratch Jr. is an entry-level programming tool for introducing young children to coding."
+  },
+  {
+    "text": "Crystal is a modern programming language with Ruby-inspired syntax and high performance."
+  },
+  {
+    "text": "Nim is a statically typed compiled language that balances speed and ease of use."
+  },
+  {
+    "text": "Smalltalk is an object-oriented language that introduced many modern programming concepts."
+  },
+  {
+    "text": "Racket, a descendant of Scheme, is used for teaching and research in programming languages."
+  },
+  {
+    "text": "PL/SQL is Oracle's procedural extension for SQL, enabling advanced database scripting."
+  },
+  {
+    "text": "Zig is a general-purpose programming language focused on simplicity and robustness."
+  },
+  {
+    "text": "J is a terse, array-oriented programming language derived from APL."
+  },
+  {
+    "text": "Tcl (Tool Command Language) is popular for scripting and rapid prototyping."
+  },
+  {
+    "text": "ML (Meta Language) is the foundation for many functional programming languages."
+  },
+  {
+    "text": "Sed is a stream editor used for parsing and transforming text in files."
+  },
+  {
+    "text": "RPG is a language still used for business applications on IBM's midrange systems."
+  },
+  {
+    "text": "Pony is an actor-model language that emphasizes performance and correctness."
+  },
+  {
+    "text": "Reason is a syntax extension and toolchain for JavaScript and OCaml projects."
+  },
+  {
+    "text": "Processing is a creative coding platform widely used in visual arts and education."
+  },
+  {
+    "text": "Assembly programming requires a deep understanding of the underlying hardware architecture."
+  },
+  {
+    "text": "Eiffel is an object-oriented programming language designed for reliability and scalability."
+  },
+  {
+    "text": "Q is a programming language used in kdb+ databases for time-series analysis."
+  },
+  {
+    "text": "Solidity is the programming language for developing smart contracts on Ethereum."
+  },
+  {
+    "text": "Hack is a programming language for the HipHop Virtual Machine (HHVM)."
+  },
+  {
+    "text": "Haxe is a cross-platform toolkit with a programming language and compilation features."
+  },
+  {
+    "text": "Io is a prototype-based programming language influenced by Smalltalk and Lua."
+  },
+  {
+    "text": "Ballerina is a cloud-native programming language for integration and microservices."
+  },
+  {
+    "text": "Lean is a functional programming language and proof assistant for formal verification."
+  },
+  {
+    "text": "Visual Basic is one of the earlier languages for creating GUI applications on Windows."
+  },
+  {
+    "text": "Simulink extends MATLAB for graphical modeling and simulation of dynamic systems."
+  },
+  {
+    "text": "Icon is a high-level language designed for processing strings and structures."
+  },
+  {
+    "text": "K is an array-processing language widely used in finance for high-performance tasks."
+  },
+  {
+    "text": "REBOL is a lightweight scripting language designed for network and data exchange."
+  },
+  {
+    "text": "Algol, short for Algorithmic Language, influenced many later programming languages."
+  },
+  {
+    "text": "Simula, considered the first object-oriented language, laid the groundwork for OOP."
+  },
+  {
+    "text": "APL, known for its symbolic notation, excels in mathematical computations."
+  },
+  {
+    "text": "Assembly is often used for embedded systems and real-time applications."
+  },
+  {
+    "text": "Forth is a stack-based, extensible programming language for embedded systems."
+  },
+  {
+    "text": "Modula-2 is a procedural language designed for teaching and systems programming."
+  },
+  {
+    "text": "Euphoria is a simple, flexible language designed for beginners and experts alike."
+  },
+  {
+    "text": "Oz is a multiparadigm language used for teaching programming concepts."
+  },
+  {
+    "text": "X++ is a language used in Microsoft Dynamics for business application development."
+  },
+  {
+    "text": "IoT programming often relies on languages like Python, C, or JavaScript."
+  },
+  {
+    "text": "WebAssembly is a low-level language designed for high-performance web applications."
+  },
+  {
+    "text": "Polyglot programming is the practice of using multiple languages within a project."
+  },
+  {
+    "text": "OpenCL uses C-based programming to write code that runs on GPUs for parallel computing."
+  },
+  {
+    "text": "RPGLE is an enhancement of RPG for business applications on IBM i platforms."
+  },
+  {
+    "text": "Oberon, created by Niklaus Wirth, is a successor to Pascal with a focus on simplicity."
+  },
+  {
+    "text": "SAS is a statistical programming language widely used in data analytics."
+  },
+  {
+    "text": "ABAP is a language used in SAP for enterprise application development."
+  },
+  {
+    "text": "HyperTalk, used in HyperCard, was one of the earliest scripting languages."
+  },
+  {
+    "text": "SPARK is a subset of Ada for building high-assurance software systems."
+  },
+  {
+    "text": "Blockly is a visual programming tool that generates code from block-based interfaces."
+  },
+  {
+    "text": "Max/MSP is used for music and multimedia applications, supporting visual programming."
+  },
+  {
+    "text": "The unrelenting pursuit of technological innovation continues to redefine the boundaries of human potential and achievement."
+  },
+  {
+    "text": "Quantum computing represents a paradigm shift in computational capabilities, promising solutions to problems previously deemed unsolvable."
+  },
+  {
+    "text": "A journey of a thousand miles begins with a single step, an adage that underscores the importance of initiative in achieving one's goals."
+  },
+  {
+    "text": "Cryptographic techniques like RSA and ECC are fundamental to securing digital communications in the modern age."
+  },
+  {
+    "text": "Marine ecosystems, which are vital to maintaining Earth's biodiversity, are increasingly threatened by climate change and pollution."
+  },
+  {
+    "text": "The history of the Roman Empire is a fascinating tapestry of political intrigue, military conquest, and cultural transformation."
+  },
+  {
+    "text": "Artificial neural networks mimic the architecture of the human brain to solve complex problems in areas such as image recognition and natural language processing."
+  },
+  {
+    "text": "The Pythagorean theorem, which relates the lengths of the sides of a right triangle, is a cornerstone of geometry and mathematics."
+  },
+  {
+    "text": "Decentralized finance (DeFi) platforms leverage blockchain technology to provide financial services without traditional intermediaries."
+  },
+  {
+    "text": "Renewable energy sources, including solar, wind, and hydroelectric power, are critical to reducing global dependence on fossil fuels."
+  },
+  {
+    "text": "Philosophers like Immanuel Kant explored profound questions about morality, ethics, and the nature of human understanding."
+  },
+  {
+    "text": "The artistic style of the Renaissance, characterized by realism and humanism, marked a profound shift in cultural expression during the 14th to 17th centuries."
+  },
+  {
+    "text": "The Fibonacci sequence, often found in nature, has applications in computer science, finance, and artistic design."
+  },
+  {
+    "text": "Space exploration missions, such as NASA's Artemis program, aim to return humans to the Moon and pave the way for future exploration of Mars."
+  },
+  {
+    "text": "In linguistics, syntax and semantics are key components of understanding how languages are structured and convey meaning."
+  },
+  {
+    "text": "Microservices architecture enables software development teams to build scalable and maintainable applications by modularizing functionality."
+  },
+  {
+    "text": "The principles of supply and demand are fundamental to understanding the dynamics of free-market economies."
+  },
+  {
+    "text": "Psychological theories such as Maslow's hierarchy of needs help explain human motivation and behavior."
+  },
+  {
+    "text": "Blockchain technology ensures data integrity through decentralized and tamper-resistant record-keeping mechanisms."
+  },
+  {
+    "text": "Genetic engineering holds immense promise for addressing global challenges, from food security to combating hereditary diseases."
+  },
+  {
+    "text": "Climate change is a multifaceted issue that requires coordinated global efforts to mitigate its impact on ecosystems and communities."
+  },
+  {
+    "text": "The theory of evolution, first proposed by Charles Darwin, provides a scientific framework for understanding biodiversity and natural selection."
+  },
+  {
+    "text": "Self-driving cars utilize sensors, machine learning algorithms, and advanced control systems to navigate and operate autonomously."
+  },
+  {
+    "text": "The study of black holes has advanced our understanding of astrophysics and the fundamental nature of space-time."
+  },
+  {
+    "text": "Globalization has interconnected economies and cultures, fostering exchange and collaboration while posing challenges to local identities."
+  },
+  {
+    "text": "Augmented reality technologies are transforming industries from gaming to healthcare by overlaying digital information onto the real world."
+  },
+  {
+    "text": "The field of epidemiology plays a critical role in understanding and controlling the spread of infectious diseases."
+  },
+  {
+    "text": "The rise of e-commerce platforms has fundamentally altered consumer behavior and retail business models."
+  },
+  {
+    "text": "String theory proposes that the fundamental building blocks of the universe are one-dimensional strings rather than point particles."
+  },
+  {
+    "text": "In literature, symbolism allows authors to imbue their work with deeper meaning and layers of interpretation."
+  },
+  {
+    "text": "The study of DNA has revolutionized forensic science, enabling investigators to solve crimes with unprecedented accuracy."
+  },
+  {
+    "text": "Renewable materials like bioplastics are being developed to reduce the environmental impact of traditional plastic production."
+  },
+  {
+    "text": "Big data analytics provides businesses with insights that drive decision-making and improve operational efficiency."
+  },
+  {
+    "text": "The discovery of exoplanets has expanded our understanding of the universe and the potential for extraterrestrial life."
+  },
+  {
+    "text": "Modern architecture often emphasizes sustainability, minimalism, and the use of innovative materials."
+  },
+  {
+    "text": "The role of social media in shaping public opinion and political discourse has grown significantly in recent years."
+  },
+  {
+    "text": "Advances in CRISPR technology have opened new avenues for precise genetic editing and medical breakthroughs."
+  },
+  {
+    "text": "The development of 5G networks promises faster internet speeds and greater connectivity for smart devices."
+  },
+  {
+    "text": "In psychology, cognitive behavioral therapy is an evidence-based approach for treating a variety of mental health conditions."
+  },
+  {
+    "text": "Renewable energy grids are being designed to integrate diverse energy sources and ensure consistent power supply."
+  },
+  {
+    "text": "The study of ancient civilizations, such as Mesopotamia and the Indus Valley, sheds light on the origins of human society."
+  },
+  {
+    "text": "Machine learning models require large datasets and computational power to achieve high levels of accuracy and performance."
+  },
+  {
+    "text": "Biodiversity hotspots around the world are critical for preserving unique species and ecosystems."
+  },
+  {
+    "text": "The human brain remains one of the most complex and least understood organs in the biological sciences."
+  },
+  {
+    "text": "Virtual reality creates immersive environments for applications ranging from training simulations to entertainment."
+  },
+  {
+    "text": "The ethical implications of artificial intelligence are a topic of significant debate among technologists and policymakers."
+  },
+  {
+    "text": "In physics, the concept of entropy is central to understanding thermodynamics and the behavior of energy systems."
+  },
+  {
+    "text": "The evolution of language reflects changes in culture, technology, and human interaction over time."
+  },
+  {
+    "text": "Efforts to conserve endangered species are crucial for maintaining ecological balance and biodiversity."
+  },
+  {
+    "text": "The Internet of Things (IoT) connects everyday devices, enabling smarter homes, cities, and industries."
+  },
+  {
+    "text": "The quick brown fox jumps over the lazy dog."
+  },
+  {
+    "text": "Artificial intelligence and machine learning are revolutionizing many industries."
+  },
+  {
+    "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ut nisl at eros dictum fringilla."
+  },
+  {
+    "text": "How much wood would a woodchuck chuck if a woodchuck could chuck wood?"
+  },
+  {
+    "text": "In 2025, renewable energy sources are expected to account for a significant portion of global energy production."
+  },
+  {
+    "text": "Once upon a time in a land far, far away, there lived a brave knight who sought to rescue a princess from a dragon."
+  },
+  {
+    "text": "The weather today is sunny with a high of 25°C and a light breeze coming from the east."
+  },
+  {
+    "text": "E=mc² is one of the most famous equations in physics, proposed by Albert Einstein in his theory of relativity."
+  },
+  {
+    "text": "To be or not to be, that is the question: Whether 'tis nobler in the mind to suffer the slings and arrows of outrageous fortune."
+  },
+  {
+    "text": "In the world of programming, Python is known for its simplicity and readability, making it a popular choice for beginners and experts alike."
+  }
+]
+
+###Request5.2 Check insersions from Qdrant
+GET http://localhost:8080/embedding/count
+
+###Request5.3 serch in terms with result limits
+POST http://localhost:8080/embedding/search?limit=3
+Content-Type: application/json
+
+{
+  "text": "programming and development"
+}
+
+###Request5.4 serch again in terms with result limits
+POST http://localhost:8080/embedding/search?limit=2
+Content-Type: application/json
+
+{
+  "text": "Culture and ecology"
+}

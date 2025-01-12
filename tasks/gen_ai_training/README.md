@@ -26,3 +26,9 @@ mvn spring-boot:run
 [HTTP Client Plugin for IntelliJ IDEA](https://www.jetbrains.com/help/idea/http-client-in-product-code-editor.html)
 
 //TODO Empty PR - promise: to complete it till the end of 22/12/24
+
+## Module 6
+
+* Run Qdrant service by [docker-compose.yaml](./docker-compose.yml)
+* Run application and sure that is working
+* Add embeddings to db by [requests.http###Module5 Request5.1 Insert embedings](./api/requests.http) 
