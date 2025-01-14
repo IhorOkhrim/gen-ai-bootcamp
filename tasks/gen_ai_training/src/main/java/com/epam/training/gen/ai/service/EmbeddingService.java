@@ -11,6 +11,7 @@ import com.azure.ai.openai.models.Embeddings;
 import com.azure.ai.openai.models.EmbeddingsOptions;
 import com.epam.training.gen.ai.config.ClientQdrantProperties;
 import com.epam.training.gen.ai.model.EmbeddingRequest;
+import com.epam.training.gen.ai.model.EmbeddingResponse;
 import com.epam.training.gen.ai.model.QdrantResponse;
 import io.qdrant.client.QdrantClient;
 import io.qdrant.client.grpc.Collections;
@@ -163,5 +164,11 @@ public class EmbeddingService {
             log.info("Collection {} already exists", name);
             return new QdrantResponse(0, "ok", false, "Collection '" + name + "' already exists");
         }
+    }
+
+    public List<EmbeddingResponse> getEmbeddings(List<Points.ScoredPoint> scoredPoints, Integer limit) {
+               return scoredPoints.stream()
+                .map(scoredPoint -> new EmbeddingResponse(scoredPoint.getPayloadMap().get("info").getStringValue(),
+                        scoredPoint.getScore())).limit(limit).toList();
     }
 }

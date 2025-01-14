@@ -739,5 +739,17 @@ POST http://localhost:8080/embedding/search?limit=2
 Content-Type: application/json
 
 {
-  "text": "Culture and ecology"
+  "text": "ecology"
+}
+
+
+######Module6 Request6.1
+POST http://localhost:8080/ai/semantic
+Content-Type: application/json
+
+{
+    "input": "Search something about 'ecology' 2 results",
+    "temperature": 0,
+    "modelName": "gpt-4o",
+    "functionsEnabled": true
 }
